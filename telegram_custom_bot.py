@@ -5,7 +5,7 @@ import requests
 
 RASA_WEBHOOK_URL = "http://localhost:5005/webhooks/rest/webhook"  # ou use o ngrok para testes externos
 
-TELEGRAM_TOKEN = "7489640056:AAGTcMsLYTlXLIQd_ltpWEc3v8Dx24gCuCQ"
+TELEGRAM_TOKEN = "TELEGRAM_TOKEN"
 
 logging.basicConfig(level=logging.INFO)
 
