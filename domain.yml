@@ -1,0 +1,28 @@
+version: "3.1"
+
+nlu:
+
+intents:
+  - inform_proximo_jogo
+  - inform_resultados_recentes
+  - inform_lineup
+  - cumprimentar
+  - despedir
+
+
+actions:
+#  - action_proximo_jogo
+#  - action_resultados_recentes
+  - action_inform_lineup
+  - action_fallback_llm
+
+responses:
+  utter_cumprimentar:
+    - text: "Fala, torcedor! Em que posso ajudar? 𓃮"
+
+  utter_despedir:
+    - text: "Valeu por usar nosso bot! Até a próxima. 👋"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

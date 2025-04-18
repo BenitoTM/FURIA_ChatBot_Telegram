@@ -1,0 +1,23 @@
+version: "3.1"
+
+rules:
+- rule: Responder ao cumprimento
+  steps:
+  - intent: cumprimentar
+  - action: utter_cumprimentar
+
+- rule: Responder a despedida
+  steps:
+  - intent: despedir
+  - action: utter_despedir
+
+- rule: usar fallback com LLM
+  steps:
+    - intent: nlu_fallback
+    - action: action_fallback_llm
+
+- rule: Informar line-up da FURIA
+  steps:
+    - intent: inform_lineup
+    - action: action_inform_lineup
+

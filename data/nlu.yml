@@ -1,0 +1,58 @@
+version: "3.1"
+
+nlu:
+
+- intent: inform_proximo_jogo
+  examples: |
+    - quando é o próximo jogo?
+    - próximo jogo da FURIA?
+    - quando a FURIA joga?
+    - qual o próximo jogo?
+    - Qual a próxima partida?
+    - Me fala o jogo da FURIA
+    - Próximo confronto da FURIA?
+    - Quando será o próximo jogo?
+    - Qual o próximo confronto da FURIA?
+    - Quando a FURIA joga de novo?
+
+- intent: inform_resultados_recentes
+  examples: |
+    - Quem ganhou o último jogo?
+    - A FURIA venceu?
+    - Último resultado?
+    - Últimos resultados
+    - Últimas partidas da FURIA
+    - A FURIA ganhou?
+    - Quanto foi o último jogo?
+    - Qual foi o placar da última partida?
+    - Resultado mais recente da FURIA
+    - Últimos jogos do time
+    - Quando foi o ultimo jogo?
+
+
+- intent: cumprimentar
+  examples: |
+    - Ola
+    - Tudo bem?
+    - Como esta?
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+    - Oi
+
+- intent: despedir
+  examples: |
+    - Ate mais
+    - Ate logo
+    - Obrigado
+    - So isso
+    - Valeu
+    - Tchau
+
+- intent: inform_lineup
+  examples: |
+    - Qual o lineup da FURIA?
+    - Quem são os jogadores da FURIA?
+    - Me mostra o time da FURIA
+    - Quem joga na FURIA hoje?
+

@@ -1,0 +1,30 @@
+version: "3.1"
+
+stories:
+
+- story: usuário pergunta sobre próximo jogo
+  steps:
+    - intent: inform_proximo_jogo
+    #- action: action_proximo_jogo
+    - action: action_fallback_llm
+
+- story: usuário pergunta pelos resultados recentes
+  steps:
+    - intent: inform_resultados_recentes
+    - action: action_fallback_llm
+#    - action: action_resultados_recentes
+
+- story: usuário cumprimenta o bot
+  steps:
+    - intent: cumprimentar
+    - action: utter_cumprimentar
+
+- story: usuário se despede do bot
+  steps:
+    - intent: despedir
+    - action: utter_despedir
+
+- story: usuário pergunta sobre lineup do time
+  steps:
+    - intent: inform_lineup
+    - action: action_inform_lineup
