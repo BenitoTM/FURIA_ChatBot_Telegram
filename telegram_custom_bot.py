@@ -2,10 +2,10 @@ import logging
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
 import requests
+import os
 
-RASA_WEBHOOK_URL = "http://localhost:5005/webhooks/rest/webhook"  # ou use o ngrok para testes externos
-
-TELEGRAM_TOKEN = "TELEGRAM_TOKEN"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+RASA_WEBHOOK_URL = os.getenv("RASA_WEBHOOK_URL")
 
 logging.basicConfig(level=logging.INFO)
 

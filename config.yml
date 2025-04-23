@@ -18,7 +18,7 @@ pipeline:
 - name: FallbackClassifier
   threshold: 0.5           # confiança mínima antes de considerar fallback
   ambiguity_threshold: 0.1  # se houver empate entre intents próximas, também ativa o fallback
-- name: custom_rag_component.CustomRAGRetriever
+#- name: custom_rag_component.CustomRAGRetriever
 
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
