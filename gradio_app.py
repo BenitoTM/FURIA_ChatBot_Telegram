@@ -2,13 +2,13 @@ import gradio as gr
 import requests
 import os
 
-RASA_API = os.getenv("RASA_API")
+RASA_API = os.getenv("RASA_API", "http://localhost:5005/webhooks/rest/webhook")
 
-# Simula o envio de mensagem para o Rasa
+# Função que envia mensagem para o Rasa
 def process_message(user_message, sender_id="test_user"):
     try:
         response = requests.post(
-            RASA_API,#RASA_WEBHOOK_URL,
+            RASA_API,
             json={"sender": sender_id, "message": user_message}
         )
 
@@ -21,10 +21,11 @@ def process_message(user_message, sender_id="test_user"):
     except Exception as e:
         return f"Erro: {str(e)}"
 
-# Interface do chat com título e instruções
-gr.ChatInterface(
-    fn=process_message,
-    title="Chatbot FURIA CS2",
-    description="Pergunte qualquer coisa sobre o time da FURIA de CS.",
-    theme="soft"
-).launch()
+# Lançar interface Gradio
+def launch_interface():
+    gr.ChatInterface(
+        fn=process_message,
+        title="Chatbot FURIA CS2",
+        description="Pergunte qualquer coisa sobre o time da FURIA de CS.",
+        theme="soft"
+    ).launch(server_name="0.0.0.0", server_port=7860)
