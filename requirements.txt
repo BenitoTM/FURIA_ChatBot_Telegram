@@ -3,4 +3,3 @@ rasa-sdk==3.6.2
 python-telegram-bot==21.6
 requests==2.32.3
 gradio==4.44.1
-pydantic==2.10.6
