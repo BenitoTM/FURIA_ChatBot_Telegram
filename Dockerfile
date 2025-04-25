@@ -10,8 +10,11 @@ RUN chmod -R 777 /opt/venv
 
 RUN pip install -r requirements.txt
 
-# Expõe as portas reais usadas
 EXPOSE 5005
 EXPOSE 7860
 
+# Remove o entrypoint "rasa" que vem da imagem base
+ENTRYPOINT []
+
+# Agora o CMD é interpretado corretamente
 CMD ["python", "main.py"]
