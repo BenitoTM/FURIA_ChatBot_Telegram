@@ -28,4 +28,4 @@ def launch_interface():
         title="Chatbot FURIA CS2",
         description="Pergunte qualquer coisa sobre o time da FURIA de CS.",
         theme="soft"
-    ).launch(server_name="0.0.0.0", server_port=7860)
+    ).launch(server_name="0.0.0.0", server_port=8000)
