@@ -4,13 +4,18 @@ USER root
 WORKDIR /app
 COPY . /app
 
+# Ambiente virtual
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN chmod -R 777 /opt/venv
 
+# Instala dependências
 RUN pip install -r requirements.txt
 
-EXPOSE $PORT
+# Exponha as portas usadas (Gradio e Rasa)
+EXPOSE 5005
+EXPOSE 7860
+EXPOSE $PORT  # para compatibilidade com Render
 
-# Use shell para garantir que a expansão e o comando funcionem no ambiente Render
-CMD sh -c "rasa run --enable-api --cors '*' -p $PORT -i 0.0.0.0"
+# Aqui rodamos o seu script que sobe tudo
+CMD ["python", "main.py"]
