@@ -11,7 +11,8 @@ RUN chmod -R 777 /opt/venv
 
 RUN pip install -r requirements.txt
 
-EXPOSE 7860
-EXPOSE 5005
+# Exponha a porta definida pelo Render
+EXPOSE $PORT
 
-CMD ["python", "main.py"]
+# Comando de inicialização padrão do Rasa com suporte à API
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "-p", "8000", "-i", "0.0.0.0"]
