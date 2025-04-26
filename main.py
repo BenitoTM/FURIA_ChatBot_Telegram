@@ -8,7 +8,7 @@ rasa_server = subprocess.Popen(
 )
 
 # Espera alguns segundos pra garantir que o Rasa suba antes do Gradio
-time.sleep(10)
+time.sleep(30)
 
 # Inicia a interface do Gradio
 from gradio_app import launch_interface  # Certifique-se de ter isso em um método
