@@ -35,6 +35,9 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
+import os
+
+DATA_SERVER_URL = os.getenv("DATA_SERVER_URL")
 
 class ActionInformLineup(Action):
     def name(self) -> str:
@@ -45,7 +48,7 @@ class ActionInformLineup(Action):
             domain: dict) -> list:
 
         try:
-            response = requests.get("http://localhost:3000/team")
+            response = requests.get(f"{DATA_SERVER_URL}/team")
             team_data = response.json()
 
             jogadores = [
@@ -85,7 +88,7 @@ class ActionFallbackLLM(Action):
 
         try:
             print(user_msg)
-            response = requests.post("http://localhost:5000/llm", json={
+            response = requests.post(f"{DATA_SERVER_URL}/llm", json={
                 "question": f"{user_msg.strip()} (sobre o time de CS:GO da FURIA)."
             })
 
