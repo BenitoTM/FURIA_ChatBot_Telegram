@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5005
 
-CMD ["run", "--enable-api", "--cors", "*", "--port", "5005"]
+CMD ["run", "--enable-api", "--cors", "*", "--debug", "--port", "5005"]
