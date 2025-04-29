@@ -3,7 +3,7 @@ import requests
 import os
 
 
-RASA_API = os.getenv("RASA_API", "https://furia-chatbot-telegram-docker.onrender.com")
+RASA_API = os.getenv("RASA_API", "https://furia-chatbot-telegram-docker.onrender.com/webhooks/rest/webhook")
 
 # Função que envia mensagem para o Rasa
 def process_message(user_message, sender_id="test_user"):
