@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5005
 
-CMD ["sh", "-c", "rasa run --enable-api --cors '*' --port ${PORT}"]
+CMD ["python", "init_rasa.py"]
