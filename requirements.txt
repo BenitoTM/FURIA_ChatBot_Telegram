@@ -1,4 +1,4 @@
-rasa==3.6.21
+#rasa==3.6.21
 rasa-sdk==3.6.2
 python-telegram-bot==21.6
 requests==2.32.3
