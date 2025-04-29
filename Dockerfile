@@ -19,11 +19,11 @@ USER root
 WORKDIR /app
 COPY . /app
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements_rasa.txt
 
 COPY models /app/models
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
-# Adiciona o script que executa rasa + actions
-COPY entrypoint.py .
+CMD ["/app/entrypoint.sh"]
 
-CMD ["python", "entrypoint.py"]
