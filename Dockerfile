@@ -7,8 +7,6 @@ COPY . /app
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install -r requirements.txt
 
-RUN rasa train
-
 EXPOSE 5005
 
-CMD ["run", "--enable-api", "--cors", "*", "--port", "5005"]
+CMD ["train", "run", "--enable-api", "--cors", "*", "--port", "5005"]
