@@ -16,7 +16,7 @@ def process_message(user_message, sender_id="test_user"):
         response = requests.post(
             SERVER_DADOS,
             json={
-                "question": f"{user_message.strip()} (sobre o time de CS:GO da FURIA)."
+                "question": f"{user_message.strip()} (sobre o time de CS2 da FURIA, 100% atualizado)."
             }
         )
 
