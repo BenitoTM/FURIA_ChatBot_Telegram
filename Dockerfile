@@ -4,6 +4,8 @@ USER root
 WORKDIR /app
 COPY . /app
 
+COPY models /app/models
+
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install -r requirements.txt
 
