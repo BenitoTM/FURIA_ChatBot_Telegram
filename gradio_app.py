@@ -8,10 +8,8 @@ SERVER_DADOS = "https://furiaservidordedados-production.up.railway.app/llm"
 
 # Função que envia mensagem para o Rasa
 def process_message(user_message, sender_id="test_user"):
-    if "line" in user_message.lower():
+    if "line" or "saiu" or "chelo" or "skullz" or "yekindar" or "molodoy" or "novo" or "futuro" in user_message.lower():
         user_message = user_message.strip() + " (segundo a HLTV)"
-    elif "oi" or "ola" in user_message.lower():
-        user_message = user_message.strip() + " (apenas faça uma saudação e se apresente)"
     try:
         """response = requests.post(
             RASA_API,
